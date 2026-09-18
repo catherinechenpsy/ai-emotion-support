@@ -1,13 +1,4 @@
 import { neon } from '@neondatabase/serverless';
 
-const connectionString =
-  process.env.DATABASE_URL ||
-  process.env.POSTGRES_URL ||
-  process.env.POSTGRES_PRISMA_URL ||
-  process.env.POSTGRES_URL_NON_POOLING;
-
-if (!connectionString) {
-  console.warn('No database connection string found.');
-}
-
-export const sql = neon(connectionString || '');
+const connectionString = postgresql://neondb_owner:npg_SHv8QXODm1Jg@ep-blue-butterfly-auqn5wv2-pooler.c-10.us-east-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require
+export const sql = neon(connectionString);
