@@ -17,7 +17,7 @@ export default function Home() {
       VALUES (${JSON.stringify(cond)})
       RETURNING id
     `;
-    localStorage.setItem('pid', result.rows[0].id);
+  localStorage.setItem('pid', result[0].id);
     localStorage.setItem('condition', JSON.stringify(cond));
     router.push('/baseline');
   };
